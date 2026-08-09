@@ -1,0 +1,1 @@
+const b=document.querySelector('.menu'),n=document.querySelector('.navbar');if(b){b.addEventListener('click',()=>{n.classList.toggle('open');b.setAttribute('aria-expanded',n.classList.contains('open'))});document.querySelectorAll('.navbar nav a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')))}
