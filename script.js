@@ -1,1 +1,0 @@
-const btn=document.querySelector('.menu-btn');const wrap=document.querySelector('.nav-wrap');if(btn){btn.addEventListener('click',()=>{wrap.classList.toggle('open');btn.setAttribute('aria-expanded',wrap.classList.contains('open'))});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>wrap.classList.remove('open')))}
