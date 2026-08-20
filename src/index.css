@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-ink-950 text-cream font-sans antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-brand-500/40 text-cream;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-300 via-brand-400 to-accent-400 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-white/[0.06] backdrop-blur-xl border border-white/10;
+  }
+  .glass-warm {
+    @apply bg-[#271c13]/60 backdrop-blur-xl border border-brand-700/30;
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(245,237,225,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245,237,225,0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .glow-brand { box-shadow: 0 0 90px -20px rgba(249,115,22,0.55); }
+  .glow-accent { box-shadow: 0 0 90px -20px rgba(245,158,11,0.5); }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+  .shimmer-text {
+    background: linear-gradient(110deg, #f5ede1 30%, #fdba74 50%, #f5ede1 70%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { @apply bg-ink-950; }
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-700 rounded-full;
+  border: 2px solid #0c0805;
+}
+::-webkit-scrollbar-thumb:hover { @apply bg-brand-700; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
