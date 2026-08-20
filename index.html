@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>NFC PORT — QR ve NFC Dijital Menü</title>
+  <meta name="description" content="Restoranlar için premium QR ve NFC dijital menü çözümleri.">
+  <meta name="theme-color" content="#010504">
+  <link rel="preload" href="assets/nfc-port-onayli-tasarim.webp" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="top" class="approved-design" aria-label="NFC PORT QR ve NFC dijital menü">
+    <img src="assets/nfc-port-onayli-tasarim.webp" alt="NFC PORT QR ve NFC dijital menü sistemi" width="1728" height="3642">
+
+    <a class="hotspot nav-features" href="#features" aria-label="Özellikler"></a>
+    <a class="hotspot nav-how" href="#how" aria-label="Nasıl Çalışır?"></a>
+    <a class="hotspot nav-contact" href="#contact" aria-label="İletişim"></a>
+    <button class="hotspot header-quote quote-open" aria-label="Fiyat Teklifi Al"></button>
+    <button class="hotspot hero-quote quote-open" aria-label="Fiyat Teklifi Al"></button>
+    <button class="hotspot cta-quote quote-open" aria-label="Fiyat Teklifi Al"></button>
+    <a class="hotspot mail-link" href="mailto:info@nfcport.com" aria-label="info@nfcport.com"></a>
+
+    <span id="features" class="anchor features-anchor" aria-hidden="true"></span>
+    <span id="how" class="anchor how-anchor" aria-hidden="true"></span>
+    <span id="contact" class="anchor contact-anchor" aria-hidden="true"></span>
+  </main>
+
+  <dialog id="quote-modal" aria-labelledby="quote-title">
+    <button class="modal-close" type="button" aria-label="Kapat">×</button>
+    <div class="modal-brand"><span>И</span> NFC PORT</div>
+    <p class="eyebrow">FİYAT TEKLİFİ</p>
+    <h2 id="quote-title">Restoranınız için teklif alın.</h2>
+    <p class="intro">Kısa formu doldurun, ihtiyacınıza en uygun QR veya NFC menü çözümü için sizinle iletişime geçelim.</p>
+
+    <form action="https://formsubmit.co/info@nfcport.com" method="POST">
+      <input type="hidden" name="_subject" value="NFC PORT - Yeni fiyat teklifi talebi">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://www.nfcport.com/?teklif=basarili">
+      <input class="honeypot" name="_honey" tabindex="-1" autocomplete="off">
+
+      <div class="form-grid">
+        <label><span>Ad soyad</span><input required name="Ad Soyad" autocomplete="name"></label>
+        <label><span>Restoran adı</span><input required name="Restoran Adı" autocomplete="organization"></label>
+        <label><span>Telefon</span><input required type="tel" name="Telefon" autocomplete="tel"></label>
+        <label><span>E-posta</span><input required type="email" name="E-posta" autocomplete="email"></label>
+        <label class="wide"><span>İşletme adresi</span><input required name="İşletme Adresi" autocomplete="street-address"></label>
+        <label><span>Masa sayısı</span><input required type="number" min="1" name="Masa Sayısı"></label>
+        <label><span>Menü tercihi</span><select required name="Menü Tercihi"><option value="">Seçiniz</option><option>Yalnızca QR Menü</option><option>QR + NFC Menü</option><option>Kararsızım, bilgi istiyorum</option></select></label>
+        <label class="wide"><span>Ek not (isteğe bağlı)</span><textarea rows="3" name="Ek Not"></textarea></label>
+      </div>
+      <label class="consent"><input required type="checkbox"><span>Bilgilerimin teklif talebimin değerlendirilmesi amacıyla kullanılmasını kabul ediyorum.</span></label>
+      <button class="submit" type="submit">Teklif Talebini Gönder <b>→</b></button>
+    </form>
+  </dialog>
+
+  <div id="success-toast" role="status">Talebiniz başarıyla alındı. En kısa sürede sizinle iletişime geçeceğiz.</div>
+  <script src="script.js"></script>
+</body>
+</html>
